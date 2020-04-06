@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +11,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { BlogComponent } from './components/blog/blog.component';
-import { CausesComponent } from './components/causes/causes.component';
+import { EventsComponent } from './components/events/events.component';
+import { AddEventComponent } from './components/events/add-event/add-event.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { CausesComponent } from './components/causes/causes.component';
     AboutusComponent,
     ContactComponent,
     BlogComponent,
-    CausesComponent
+    EventsComponent,
+    AddEventComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
