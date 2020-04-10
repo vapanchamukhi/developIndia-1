@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { map } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,4 +16,14 @@ export class BlogService {
     console.log("form Blog Data ",form);
     return this.http.post(this.url, form);
   }
+  getBlogs() {
+    return this.http.get<GetResponse>(this.url).pipe(
+      map(response => response._embedded.blogs)
+    );
+  }
+}
+interface GetResponse {
+  _embedded: {
+    blogs: any[];
+  };
 }
