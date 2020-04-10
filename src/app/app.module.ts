@@ -13,6 +13,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { EventsComponent } from './components/events/events.component';
 import { AddEventComponent } from './components/events/add-event/add-event.component';
+import { AddNewComponent } from './components/blog/add-new/add-new.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddEventComponent } from './components/events/add-event/add-event.compo
     ContactComponent,
     BlogComponent,
     EventsComponent,
-    AddEventComponent
+    AddEventComponent,
+    AddNewComponent
   ],
   imports: [
     BrowserModule,

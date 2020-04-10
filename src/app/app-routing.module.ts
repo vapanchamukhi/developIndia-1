@@ -6,10 +6,12 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { EventsComponent } from './components/events/events.component';
 import { AddEventComponent } from './components/events/add-event/add-event.component';
+import { AddNewComponent } from './components/blog/add-new/add-new.component';
 
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
+  {path: 'blog/add-new-blog', component: AddNewComponent},
   {path: 'blog', component: BlogComponent},
   {path: 'events/add-new-events', component: AddEventComponent},
   {path: 'events', component: EventsComponent},

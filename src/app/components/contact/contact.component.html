@@ -18,26 +18,28 @@
 
             <div class="row">
                 <div class="col-lg-8 mb-5">
-                    <form action="#" method="post">
+                    <form #f="ngForm" (ngSubmit)="submitContact(f)">
                         <div class="form-group row">
                             <div class="col-md-6 mb-4 mb-lg-0">
-                                <input type="text" class="form-control" placeholder="First name">
+                                <input type="text" class="form-control" placeholder="First name" name="firstName"
+                                    ngModel>
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Last name">
+                                <input type="text" class="form-control" placeholder="Last name" name="lastName" ngModel>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="Email address">
+                                <input type="text" class="form-control" placeholder="Email address" name="email"
+                                    ngModel>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <textarea name="" id="" class="form-control" placeholder="Write your message." cols="30"
-                                    rows="10"></textarea>
+                                    rows="10" name="message" ngModel></textarea>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -47,6 +49,10 @@
                             </div>
                         </div>
                     </form>
+
+                    <div class="alert alert-success" role="alert" *ngIf="success">
+                        Form submitted successfully :)
+                    </div>
                 </div>
                 <div class="col-lg-4 ml-auto">
                     <div class="bg-white p-3 p-md-5">

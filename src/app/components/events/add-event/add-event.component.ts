@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from 'src/app/services/events.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-event',
@@ -15,10 +16,10 @@ export class AddEventComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onPostEvent(form){
+  onPostEvent(form:NgForm){
     this.eventService.onPostNewEvent(form).subscribe(data=>{
       console.log(data)
-      form.resetForm;
+      form.reset();
       this.success = true;
     },
     error=>console.log(error));

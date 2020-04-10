@@ -1,0 +1,31 @@
+<div class="row m-5">
+    <div class="col-md-6">
+        <form #eventForm="ngForm" (ngSubmit)="onPostBlog(eventForm)">
+
+            <div class="form-group">
+                <label for="name">Enter your full name</label>
+                <input type="text" class="form-control" id="author" name="author" ngModel
+                    placeholder="Enter Event Name">
+            </div>
+            <div class="form-group">
+                <label for="title">Blog Title</label>
+                <input type="text" class="form-control" id="title" name="title" ngModel
+                    placeholder="Enter Event Name">
+            </div>
+            <div class="form-group">
+                <label for="blog">Enter your Blog</label>
+                <input type="textarea" class="form-control" id="blog" name="blog" ngModel
+                    placeholder="Description">
+            </div>
+            <div class="form-group">
+                <label for="imgUrl">Image</label>
+                <input type="url" class="form-control" id="imgUrl" name="imgUrl" ngModel
+                    placeholder="Enter Url">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="alert alert-success" role="alert" *ngIf="success">
+            Form submitted successfully :)
+          </div>
+    </div>
+</div>
