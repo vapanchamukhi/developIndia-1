@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BlogService {
 
-  private url = 'http://localhost:8080/api/blogs';
+  private url = 'https://develop-india-backend.herokuapp.com/api/blogs';
 
   constructor(private http:HttpClient) { }
 

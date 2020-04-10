@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactusService {
 
-  private url = 'http://localhost:8080/api/contactuses';
+  private url = 'https://develop-india-backend.herokuapp.com/api/contactuses';
 
   constructor(private http:HttpClient) { }
 

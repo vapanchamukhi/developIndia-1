@@ -11,7 +11,7 @@ export class EventsService {
 
   success;
 
-  private url = 'http://localhost:8080/api/eventses';
+  private url = 'https://develop-india-backend.herokuapp.com/api/eventses';
 
   constructor(private http:HttpClient) { }
 
