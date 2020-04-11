@@ -1,10 +1,13 @@
 <mat-sidenav-container class="example-container">
     <mat-sidenav mode="side" opened>
         <mat-nav-list>
-            <a mat-list-item [routerLink]="item.link" *ngFor="let item of links"> {{ item.name }} </a>
+            <a mat-list-item [routerLink]="item.link" *ngFor="let item of links"
+            routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                {{ item.name }} 
+            </a>
          </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        Main content
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

@@ -6,5 +6,9 @@ mat-sidenav,mat-sidenav-content{
 }
 
 mat-sidenav{
-    width: 35%;
+    background-color:#EBFFD8;
+    width: 25%;
+}
+.active{
+    background-color: #D8FEFF;
 }

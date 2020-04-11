@@ -8,6 +8,9 @@ import { EventsComponent } from './components/events/events.component';
 import { AddEventComponent } from './components/events/add-event/add-event.component';
 import { AddNewComponent } from './components/blog/add-new/add-new.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { AdminBlogsComponent } from './components/admin/admin-blogs/admin-blogs.component';
+import { AdminEventsComponent } from './components/admin/admin-events/admin-events.component';
+import { AdminContactusComponent } from './components/admin/admin-contactus/admin-contactus.component';
 
 
 const routes: Routes = [
@@ -19,6 +22,9 @@ const routes: Routes = [
   {path: 'contactus', component: ContactComponent},
   {path: 'aboutus', component: AboutusComponent},
   {path: 'admin', component: AdminComponent, children:[
+    {path: 'admin-blogs', component: AdminBlogsComponent},
+    {path: 'admin-events', component: AdminEventsComponent},
+    {path: 'admin-contactus', component: AdminContactusComponent},
   ]}
 ];
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
   selector: 'app-admin-blogs',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminBlogsComponent implements OnInit {
 
-  constructor() { }
+  blogsList;
+
+  displayedColumns: string[] = ['title', 'author', 'blog', 'imgUrl'];
+
+  constructor(private blogService:BlogService) { }
 
   ngOnInit(): void {
+    this.blogService.getBlogs().subscribe(data=>{
+      console.log("All Blogs: ",data);
+      this.blogsList = data;
+    },
+    error=>console.log("error blog list", error));
   }
 
 }
