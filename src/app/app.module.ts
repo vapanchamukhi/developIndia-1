@@ -20,6 +20,7 @@ import { MaterialModule } from './material/material.module';
 import { AdminBlogsComponent } from './components/admin/admin-blogs/admin-blogs.component';
 import { AdminEventsComponent } from './components/admin/admin-events/admin-events.component';
 import { AdminContactusComponent } from './components/admin/admin-contactus/admin-contactus.component';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AdminContactusComponent } from './components/admin/admin-contactus/admi
     AdminComponent,
     AdminBlogsComponent,
     AdminEventsComponent,
-    AdminContactusComponent
+    AdminContactusComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
