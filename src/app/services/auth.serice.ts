@@ -14,12 +14,9 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-  onPostBlog(){
-    let form = {
-      email: 'vidya@develop.com',
-      password: 'vidyadevelop'
-    }
-    return this.http.post(this.url, form);
+  onPostAuth(form){
+    this.http.post(this.url, form).subscribe(data=>console.log('user created'),
+    error=>console.log("user post error", error));
   }
   getAuths() {
     return this.http.get<GetResponse>(this.url).pipe(

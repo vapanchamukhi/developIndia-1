@@ -11,10 +11,13 @@ export class AuthComponent implements OnInit {
 
   authList;
 
-  constructor(private authService: AuthService) { }
+  failedLogin: boolean;
+
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
     this.authService.getAuths().subscribe(data=>{
+      console.log("Received AuthLists")
       this.authList = data;
     },
     error=>console.log("Error recveing auths", error))
@@ -22,13 +25,20 @@ export class AuthComponent implements OnInit {
 
   login(form: NgForm){
     let formData = form.value;
-    console.log("form values: ",formData);
     for(let auth of this.authList){
       if(formData.email === auth.email && formData.password === auth.password){
         localStorage.setItem("develop-login", "true");
         this.authService.loggedIn = true;
       }
+      else{
+        this.failedLogin=true;
+      }
     }
+  }
+
+  logout(){
+    localStorage.removeItem("develop-login")
+    this.authService.loggedIn = false;
   }
 
 }

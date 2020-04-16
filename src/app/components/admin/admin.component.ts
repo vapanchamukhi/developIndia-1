@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
+  sideNavOpened= false;
+
   links = [
     {name:'Manage Blogs', link:'admin-blogs'},
     {name:'Manage Events', link:'admin-events'},
@@ -15,6 +17,12 @@ export class AdminComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  sideNavFun(){
+    console.log(this.sideNavOpened)
+    this.sideNavOpened = !this.sideNavOpened;
+    console.log(this.sideNavOpened)
   }
 
 }

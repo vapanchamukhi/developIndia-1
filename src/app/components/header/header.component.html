@@ -44,8 +44,10 @@
                         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="events" class="nav-link">Our Events</a></li>
                         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="blog" class="nav-link">Blog</a></li>
                         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="contactus" class="nav-link">Contact</a></li>
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="admin" class="nav-link">Admin Panel</a></li>
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="auth" class="nav-link ml-3">
+                        <li *ngIf="authService.loggedIn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="admin" class="nav-link">Admin Panel</a></li>
+                        <li *ngIf="authService.loggedIn" (click)="logout()"><a routerLink="contactus" class="nav-link">Log Out</a></li>
+                        <li *ngIf="!authService.loggedIn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="auth"
+                             class="nav-link ml-3" (click)="createProfile()">
                             <mat-icon>account_circle</mat-icon>
                         </a></li>
                     </ul>

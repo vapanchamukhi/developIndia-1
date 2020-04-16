@@ -12,3 +12,7 @@ mat-sidenav{
 .active{
     background-color: #D8FEFF;
 }
+
+.toggleSideNav{
+    cursor: pointer;
+}

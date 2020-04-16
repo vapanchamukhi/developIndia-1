@@ -9,23 +9,22 @@
             </div>
             <div class="form-group">
                 <label for="title">Blog Title</label>
-                <input type="text" class="form-control" id="title" name="title" ngModel
-                    placeholder="Enter Event Name">
+                <input type="text" class="form-control" id="title" name="title" ngModel placeholder="Enter Event Name">
             </div>
             <div class="form-group">
-                <label for="blog">Enter your Blog</label>
-                <input type="textarea" class="form-control" id="blog" name="blog" ngModel
-                    placeholder="Description">
+                <label for="blog">Enter your Blog:</label>
+                <textarea class="form-control" rows="5" id="blog" name="blog" ngModel
+                    placeholder="Enter Your Blog">
+            </textarea>
             </div>
             <div class="form-group">
-                <label for="imgUrl">Image</label>
-                <input type="url" class="form-control" id="imgUrl" name="imgUrl" ngModel
-                    placeholder="Enter Url">
+                <label for="imgUrl">Enter Image url</label>
+                <input type="url" class="form-control" id="imgUrl" name="imgUrl" ngModel placeholder="Enter Url">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <div class="alert alert-success" role="alert" *ngIf="success">
             Form submitted successfully :)
-          </div>
+        </div>
     </div>
 </div>

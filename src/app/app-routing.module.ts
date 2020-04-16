@@ -16,16 +16,16 @@ import { AuthComponent } from './components/auth/auth.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
-  {path: 'blog/add-new-blog', component: AddNewComponent},
   {path: 'blog', component: BlogComponent},
-  {path: 'events/add-new-events', component: AddEventComponent},
   {path: 'events', component: EventsComponent},
   {path: 'contactus', component: ContactComponent},
   {path: 'aboutus', component: AboutusComponent},
   {path: 'auth', component: AuthComponent},
   {path: 'admin', component: AdminComponent, children:[
     {path: 'admin-blogs', component: AdminBlogsComponent},
+    {path: 'admin-blogs/add-new-blog', component: AddNewComponent},
     {path: 'admin-events', component: AdminEventsComponent},
+    {path: 'admin-events/add-new-events', component: AddEventComponent},
     {path: 'admin-contactus', component: AdminContactusComponent},
   ]}
 ];

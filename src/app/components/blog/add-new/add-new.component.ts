@@ -22,7 +22,8 @@ export class AddNewComponent implements OnInit {
     this.success = true;
     },
     error=>{
-      console.log("error in blog: ",console.log(error));
+      console.log("error in blog: ",console.log(error))
+      alert("failed!");
     })
   }
   

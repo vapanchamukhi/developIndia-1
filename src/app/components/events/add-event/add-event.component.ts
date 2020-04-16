@@ -22,7 +22,10 @@ export class AddEventComponent implements OnInit {
       form.reset();
       this.success = true;
     },
-    error=>console.log(error));
+    error=>{
+      console.log(error)
+    alert("failed!")}
+      );
   }
 
 }
