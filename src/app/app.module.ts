@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { AdminBlogsComponent } from './components/admin/admin-blogs/admin-blogs.
 import { AdminEventsComponent } from './components/admin/admin-events/admin-events.component';
 import { AdminContactusComponent } from './components/admin/admin-contactus/admin-contactus.component';
 import { AuthComponent } from './components/auth/auth.component';
+import { BlogDeatilsComponent } from './components/blog/blog-deatils/blog-deatils.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { AuthComponent } from './components/auth/auth.component';
     AdminBlogsComponent,
     AdminEventsComponent,
     AdminContactusComponent,
-    AuthComponent
+    AuthComponent,
+    BlogDeatilsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { AuthComponent } from './components/auth/auth.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,21 +21,37 @@
                     <div class="event-29191 mb-5">
                         <a href="#" class="d-block mb-3"><img [src]="blog.imgUrl" alt="Image"
                                 class="img-fluid rounded"></a>
-                        <div class="px-3 d-flex">
+                        <!-- <div class="px-3 d-flex">
 
                             <div class="bg-primary p-3 d-inline-block text-center rounded mr-4 date">
-                                <!-- <span class="text-white h3 m-0 d-block">22</span> -->
+                                <span class="text-white h3 m-0 d-block">22</span>
                                 <span class="text-white small">{{blog.dateCreated | date}}</span>
                             </div>
 
                             <div>
                                 <h3>{{blog.title}}</h3>
                             </div>
-                            <h4><span class="p-2 border bg-secondary text-white rounded m-1"> Author: </span>
-                                {{blog.author}}
-                            </h4>
+                        </div> -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="bg-primary p-3 d-inline-block text-center rounded mr-4 date">
+                                    <!-- <span class="text-white h3 m-0 d-block">22</span> -->
+                                    <span class="text-white small">{{blog.dateCreated | date}}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div>
+                                    <h2>{{blog.title}}</h2>
+                                </div>
+                                <div class="text">
+                                    {{blog.blog}} 
+                                </div>
+                                <span>... <a routerLink="1">Read More</a></span>
+                            </div>
                         </div>
-                        
+                        <h4 class="border rounded my-4"><span class="text-primary"> Author: </span>
+                            {{blog.author}}
+                        </h4>
                     </div>
                 </div>
 

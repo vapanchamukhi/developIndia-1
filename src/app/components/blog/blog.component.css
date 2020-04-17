@@ -1,0 +1,17 @@
+.text-overflow{
+    height: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.text{ 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    line-height: 16px;  
+    max-height: 32px;      
+      
+    /* The number of lines to be displayed */ 
+    -webkit-line-clamp: 4;  
+    -webkit-box-orient: vertical; 
+} 

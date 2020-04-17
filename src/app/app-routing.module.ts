@@ -12,11 +12,13 @@ import { AdminBlogsComponent } from './components/admin/admin-blogs/admin-blogs.
 import { AdminEventsComponent } from './components/admin/admin-events/admin-events.component';
 import { AdminContactusComponent } from './components/admin/admin-contactus/admin-contactus.component';
 import { AuthComponent } from './components/auth/auth.component';
+import { BlogDeatilsComponent } from './components/blog/blog-deatils/blog-deatils.component';
 
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
   {path: 'blog', component: BlogComponent},
+  {path: 'blog/:id', component: BlogDeatilsComponent},
   {path: 'events', component: EventsComponent},
   {path: 'contactus', component: ContactComponent},
   {path: 'aboutus', component: AboutusComponent},
