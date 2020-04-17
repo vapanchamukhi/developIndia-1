@@ -16,10 +16,15 @@ export class BlogService {
     console.log("form Blog Data ",form);
     return this.http.post(this.url, form);
   }
+
   getBlogs() {
     return this.http.get<GetResponse>(this.url).pipe(
       map(response => response._embedded.blogs)
     );
+  }
+
+  getBlogsById(url){
+    return this.http.get(url);
   }
 }
 interface GetResponse {

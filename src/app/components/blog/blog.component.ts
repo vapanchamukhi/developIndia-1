@@ -21,4 +21,8 @@ export class BlogComponent implements OnInit {
       error=>console.log("Error in Blog List", error))
   }
 
+  getBlogById(id){
+    
+  }
+
 }
