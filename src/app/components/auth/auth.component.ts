@@ -11,7 +11,7 @@ export class AuthComponent implements OnInit {
 
   authList;
 
-  failedLogin: boolean;
+  failedLogin: boolean = false;
 
   constructor(public authService: AuthService) { }
 
@@ -24,16 +24,17 @@ export class AuthComponent implements OnInit {
   }
 
   login(form: NgForm){
+    console.log(this.failedLogin);
     let formData = form.value;
     for(let auth of this.authList){
       if(formData.email === auth.email && formData.password === auth.password){
         localStorage.setItem("develop-login", "true");
         this.authService.loggedIn = true;
-      }
-      else{
-        this.failedLogin=true;
+        return
       }
     }
+    if(!this.authService.loggedIn)
+      this.failedLogin = true
   }
 
   logout(){
