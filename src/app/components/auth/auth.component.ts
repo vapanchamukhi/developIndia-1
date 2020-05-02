@@ -17,7 +17,7 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.getAuths().subscribe(data=>{
-      console.log("Received AuthLists", data)
+      console.log("Received AuthLists")
       this.authList = data;
     },
     error=>console.log("Error recveing auths", error))
