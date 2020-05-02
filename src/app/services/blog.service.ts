@@ -23,8 +23,12 @@ export class BlogService {
     );
   }
 
-  getBlogsById(url){
-    return this.http.get(url);
+  getBlogsById(id){
+    return this.http.get(this.url+'/'+id);
+  }
+
+  updateCount(id, count){
+    return this.http.patch(this.url + '/' + id,{count: count});
   }
 }
 interface GetResponse {

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { EventsService } from 'src/app/services/events.service';
+import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
   selector: 'app-home',
@@ -8,34 +10,42 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  eventsList=[];
+  blogsList=[];
+
+  constructor(private eventsService: EventsService,
+    private blogsService:BlogService) { }
 
   ngOnInit(): void {
-  }
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: false,
-    navSpeed: 100,
-    navText: ['Previos', 'Next'],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 1
-      },
-      740: {
-        items: 1
-      },
-      940: {
-        items: 1
+    this.eventsService.getEvents().subscribe(data=>{
+      this.eventsList = data;
+      let tempEvents=[];
+      let count =1;
+      for(let event of this.eventsList){
+        if(count<4){
+          tempEvents.push(event);
+          count++;
+        }
+        console.log('tempevents: ', tempEvents)
       }
-    },
-    nav: true
+      this.eventsList = tempEvents;
+    });
+
+    this.blogsService.getBlogs().subscribe(data=>{
+      this.blogsList = data;
+      let tempBlogs=[];
+      let count =1;
+      for(let blog of this.blogsList){
+        if(count<4){
+          tempBlogs.push(blog);
+          count++;
+        }
+        else{
+          count =1;
+        }
+      }
+      this.blogsList = tempBlogs;
+    });
   }
-
-
+  
 }

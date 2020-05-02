@@ -16,13 +16,10 @@ export class BlogComponent implements OnInit {
     this.blogService.getBlogs().subscribe(data=>
       {
         this.blogList = data;
-        console.log("Blog List: ", data)
+        console.log("Blog List: ", data);
       },
       error=>console.log("Error in Blog List", error))
   }
 
-  getBlogById(id){
-    
-  }
 
 }

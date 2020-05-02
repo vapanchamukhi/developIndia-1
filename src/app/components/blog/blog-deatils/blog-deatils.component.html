@@ -1,1 +1,13 @@
-<p>blog-deatils works!</p>
+<div class="site-wrap" id="home-section">
+    <div class="site-section">
+        <div class="container">
+            <div class="heading-20219 mb-4 bg-success pt-3 pb-1">
+                <h1 class="display-1 title text-cursive ml-5 text-white">{{blog.title}}</h1>
+            </div>
+            <div class="mb-5">{{blog.dateCreated | date}}</div>
+            <div>
+                <p style="white-space: pre-wrap; font-family: Arial, Helvetica, sans-serif;">
+                    {{blog.blog}}
+                </p>
+            </div>
+</div>

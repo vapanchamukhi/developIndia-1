@@ -28,7 +28,9 @@
     <!-- Symbol Column -->
     <ng-container matColumnDef="blog">
       <th mat-header-cell *matHeaderCellDef> Blog </th>
-      <td mat-cell *matCellDef="let element"> {{element.blog}} </td>
+      <td mat-cell *matCellDef="let element">
+        <span>... <a routerLink="1">Read More</a></span>
+      </td>
     </ng-container>
 
     <!-- Symbol Column -->

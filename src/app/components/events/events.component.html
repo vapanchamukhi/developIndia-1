@@ -1,5 +1,15 @@
 <div class="site-wrap" id="home-section">
 
+  <div class="owl-carousel-wrapper">
+
+    <div class="box-92819">
+      <h1 class="text-white mb-3">Our Evnts</h1>
+      <p class="lead text-white">Events conducted by our teams on several feilds and places to help our nation's citizen to grow and be aware towrads their responsiblities</p>
+    </div>
+
+    <div class="ftco-cover-1 overlay" style="background-image: url('../../../assets/images/hero_3.jpg');"></div>
+
+  </div>
   <div class="site-section">
     <div class="container">
 
@@ -7,7 +17,8 @@
         <div class="col-md-5">
           <div class="heading-20219">
             <h2 class="title text-cursive mb-4">Events</h2>
-            <p>Videos and pictures including event deails of all the events which our team has successfully completed and details of our upcoming events</p>
+            <p>Videos and pictures including event deails of all the events which our team has successfully completed
+              and details of our upcoming events</p>
           </div>
         </div>
 
@@ -33,16 +44,18 @@
             <div class="px-3 d-flex my-3">
 
               <div class="bg-primary p-2 d-inline-block text-center rounded mr-4 date">
-                  <!-- <span class="text-white h3 m-0 d-block">22</span> -->
-                  <span class="text-white small">{{event.dateCreated | date}}</span>
+                <!-- <span class="text-white h3 m-0 d-block">22</span> -->
+                <span class="text-white small">{{event.dateCreated | date}}</span>
               </div>
 
               <div>
-                  <h3>{{event.eventName}}</h3>
+                <h3>{{event.eventName}}</h3>
               </div>
-          </div>
+            </div>
             <div class="px-3">
-              <p class="mb-4">{{event.eventDescription}}</p>
+              <p class="mb-4 overflow-hidden">
+                {{event.eventDescription}}
+              </p>
             </div>
 
           </div>
@@ -59,6 +72,6 @@
     </div>
   </div>
 
-<div>
+  <div>
 
-</div>
+  </div>
