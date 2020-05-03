@@ -9,8 +9,10 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <div (click)="sidenav.toggle()" class="toggleSideNav">
-            <mat-icon *ngIf="!sideNavOpened" (click)="sideNavFun()">toggle_off</mat-icon>
-            <mat-icon *ngIf="sideNavOpened" (click)="sideNavFun()">toggle_on</mat-icon>
+            <p *ngIf="!sideNavOpened" (click)="sideNavFun()">
+                <button class="btn border">Hide</button>
+            </p>
+            <mat-icon *ngIf="sideNavOpened" (click)="sideNavFun()">list</mat-icon>
         </div>
         <router-outlet></router-outlet>
     </mat-sidenav-content>

@@ -12,7 +12,6 @@ export class HomeComponent implements OnInit {
 
   eventsList=[];
   blogsList=[];
-
   constructor(private eventsService: EventsService,
     private blogsService:BlogService) { }
 
@@ -22,7 +21,7 @@ export class HomeComponent implements OnInit {
       let tempEvents=[];
       let count =1;
       for(let event of this.eventsList){
-        if(count<4){
+        if(count<5){
           tempEvents.push(event);
           count++;
         }
@@ -36,7 +35,7 @@ export class HomeComponent implements OnInit {
       let tempBlogs=[];
       let count =1;
       for(let blog of this.blogsList){
-        if(count<4){
+        if(count<5){
           tempBlogs.push(blog);
           count++;
         }

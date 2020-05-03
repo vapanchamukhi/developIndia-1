@@ -22,7 +22,8 @@
                         ruling over nature, Our Mission is to bring awareness that the natural resources are finite and
                         we should use resources in a responsible way, and do not do any wastage.</p>
 
-                    <p>You too can contribute by sharing any ideas which will help our society to meet our mission. To contribute by sharing your ideas you contact us by clicking below link:</p>
+                    <p>You too can contribute by sharing any ideas which will help our society to meet our mission. To
+                        contribute by sharing your ideas you contact us by clicking below link:</p>
                     <p><a routerLink="/contactus" class="btn btn-primary rounded-0 px-4">Contact Us</a></p>
                 </div>
             </div>
@@ -49,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                
+
 
                 <div class="col-lg-4 col-md-6 mb-5">
                     <div class="post-entry-1 h-100 bg-white text-center">
@@ -62,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                
+
 
                 <div class="col-lg-4 col-md-6 mb-5">
                     <div class="post-entry-1 h-100 bg-white text-center">
@@ -110,46 +111,8 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
-    <div class="site-section">
-        <div class="container">
-
-            <div class="row mb-5 align-items-st">
-                <div class="col-md-4">
-                    <div class="heading-20219">
-                        <h2 class="title text-cursive">Latest Events</h2>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <p></p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4" *ngFor="let about of eventsList">
-                    <div class="cause shadow-sm">
-
-                        <a href="#" class="cause-link d-block">
-                            <img [src]="about.eventImgPath" alt="Image" class="img-fluid">
-                        </a>
-
-                        <div class="px-3 pt-3 border-top-0 border border shadow-sm">
-                            <h3 class="mb-4"><a href="#">{{about.eventName}}</a></h3>
-                            <div class="border-top border-light border-bottom py-2 d-flex">
-                                <h4>Date</h4>
-                                <div class="ml-auto"><strong class="text-primary">{{about.dateCreated | date}}</strong></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
 
 </div>
