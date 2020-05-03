@@ -23,6 +23,13 @@ import { AdminEventsComponent } from './components/admin/admin-events/admin-even
 import { AdminContactusComponent } from './components/admin/admin-contactus/admin-contactus.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { BlogDeatilsComponent } from './components/blog/blog-deatils/blog-deatils.component';
+import { MainNavComponent } from './components/main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -41,7 +48,8 @@ import { BlogDeatilsComponent } from './components/blog/blog-deatils/blog-deatil
     AdminEventsComponent,
     AdminContactusComponent,
     AuthComponent,
-    BlogDeatilsComponent
+    BlogDeatilsComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,13 @@ import { BlogDeatilsComponent } from './components/blog/blog-deatils/blog-deatil
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    CarouselModule
+    CarouselModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
