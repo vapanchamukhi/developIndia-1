@@ -26,12 +26,13 @@
     <mat-toolbar style="z-index: 100; background-color: #21323b;">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        <mat-icon style="color: white;" aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>
         <a routerLink="" class="text-white">
           <img class="img-fluid" style="height: 67px;" src="../../../assets/images/logo.png">
-          Developed India</a>
+          Developed India
+        </a>
       </span>
       <span class="spacer"></span>
       <div *ngIf="!(isHandset$ | async)">

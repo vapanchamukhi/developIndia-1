@@ -51,7 +51,7 @@
     </div>
 
     <div class="card-group mb-5">
-      <div class="card" *ngFor="let event of eventsList; index as i">
+      <div class="card m-1 shadow" *ngFor="let event of eventsList; index as i">
         <img class="card-img-top" [src]="event.eventImgPath" height="200" width="auto" alt="image">
         <div class="card-body">
           <h5 class="card-title">{{event.eventName}}</h5>
@@ -85,7 +85,7 @@
 
       <div class="row">
         <div class="col-md-3" *ngFor="let blog of blogsList; index as i">
-          <div class="card" style="width: 18rem;" *ngIf="i<=3">
+          <div class="card m-1 shadow" style="width: 18rem;" *ngIf="i<=3">
             <div class="card-body">
               <h4 class="card-title mt-2 mb-5 display-5" style="height: 100px;">{{blog.title}}</h4>
               <h6 class="card-subtitle mb-2">By:
