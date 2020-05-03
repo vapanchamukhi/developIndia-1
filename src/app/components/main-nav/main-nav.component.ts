@@ -33,8 +33,8 @@ export class MainNavComponent {
 
     createProfile() {
       let form = {
-        email: 'vidya@developindia.com',
-        password: 'vidyadevelopindia'
+        email: 'vidya@developedindia.com',
+        password: 'vidyadevelopedindia'
       }
       let auths;
       this.authService.getAuths().subscribe(data => {
