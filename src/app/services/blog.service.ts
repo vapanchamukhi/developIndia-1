@@ -30,6 +30,10 @@ export class BlogService {
   updateCount(id, count){
     return this.http.patch(this.url + '/' + id,{count: count});
   }
+
+  deleteBlog(id){
+    return this.http.delete(this.url+'/'+id);
+  }
 }
 interface GetResponse {
   _embedded: {

@@ -26,6 +26,10 @@ export class EventsService {
       map(response => response._embedded.eventses)
     );
   }
+
+  deleteEvent(id){
+    return this.http.delete(this.url+'/'+id);
+  }
 }
 interface GetResponse {
   _embedded: {

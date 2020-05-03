@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -58,7 +57,6 @@ import { MatListModule } from '@angular/material/list';
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    CarouselModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,

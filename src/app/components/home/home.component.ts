@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { EventsService } from 'src/app/services/events.service';
 import { BlogService } from 'src/app/services/blog.service';
 

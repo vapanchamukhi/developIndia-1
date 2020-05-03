@@ -9,8 +9,9 @@ import { BlogService } from 'src/app/services/blog.service';
 export class AdminBlogsComponent implements OnInit {
 
   blogsList;
+  deleted = false;
 
-  displayedColumns: string[] = ['title', 'author', 'blog', 'imgUrl'];
+  displayedColumns: string[] = ['title', 'author', 'blog', 'imgUrl','actions'];
 
   constructor(private blogService:BlogService) { }
 
@@ -20,6 +21,13 @@ export class AdminBlogsComponent implements OnInit {
       this.blogsList = data;
     },
     error=>console.log("error blog list", error));
+  }
+  delete(id){
+    this.blogService.deleteBlog(id).subscribe(data=>{
+      console.log('deleted', data);
+      this.deleted = true;
+      this.ngOnInit();
+    })
   }
 
 }

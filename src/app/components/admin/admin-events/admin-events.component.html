@@ -2,6 +2,10 @@
   <a routerLink="add-new-events" class="btn btn-danger">Add new Events</a>
 </div>
 
+<div class="alert alert-success" role="alert" *ngIf="deleted">
+  Successfully Deleted!
+</div>
+
 <table mat-table [dataSource]="eventsList" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -12,6 +16,14 @@
       <th mat-header-cell *matHeaderCellDef> No. </th>
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container> -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element"> 
+        <a class="hyperlink"><mat-icon (click)="delete(element.id)">delete</mat-icon></a>  
+      </td>
+    </ng-container>
   
     <!-- Name Column -->
     <ng-container matColumnDef="eventName">

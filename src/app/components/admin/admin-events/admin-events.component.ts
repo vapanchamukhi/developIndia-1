@@ -10,7 +10,8 @@ export class AdminEventsComponent implements OnInit {
 
   eventsList;
 
-  displayedColumns: string[] = ['eventName', 'eventDescription', 'eventImgPath'];
+  displayedColumns: string[] = ['eventName', 'eventDescription', 'eventImgPath', 'actions'];
+  deleted: boolean = false;
 
   constructor(private eventsService:EventsService) { }
 
@@ -20,6 +21,14 @@ export class AdminEventsComponent implements OnInit {
       this.eventsList = data;
     },
     error=>console.log("error evnents list", error));
+  }
+
+  delete(id){
+    this.eventsService.deleteEvent(id).subscribe(data=>{
+      console.log('deleted', data);
+      this.deleted = true;
+      this.ngOnInit();
+    })
   }
 
 }
