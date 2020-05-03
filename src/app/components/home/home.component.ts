@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     private blogsService:BlogService) { }
 
   ngOnInit(): void {
-    this.eventsService.getEvents().subscribe(data=>{
+    this.eventsService.getEventsByDate().subscribe(data=>{
       this.eventsList = data;
       let tempEvents=[];
       let count =1;
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
       this.eventsList = tempEvents;
     });
 
-    this.blogsService.getBlogs().subscribe(data=>{
+    this.blogsService.getBlogsByDate().subscribe(data=>{
       this.blogsList = data;
       let tempBlogs=[];
       let count =1;

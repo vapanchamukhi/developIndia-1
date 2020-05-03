@@ -23,6 +23,12 @@ export class BlogService {
     );
   }
 
+  getBlogsByDate() {
+    return this.http.get<GetResponse>(this.url+'?sort=lastUpdated,desc').pipe(
+      map(response => response._embedded.blogs)
+    );
+  }
+
   getBlogsById(id){
     return this.http.get(this.url+'/'+id);
   }

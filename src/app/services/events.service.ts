@@ -20,12 +20,19 @@ export class EventsService {
     let response = this.http.post(this.url, form.value)
     return response;
   }
-
+  
   getEvents(){
     return this.http.get<GetResponse>(this.url).pipe(
       map(response => response._embedded.eventses)
     );
   }
+
+  getEventsByDate(){
+    return this.http.get<GetResponse>(this.url+'?sort=lastUpdated,desc').pipe(
+      map(response => response._embedded.eventses)
+    );
+  }
+
 
   deleteEvent(id){
     return this.http.delete(this.url+'/'+id);
