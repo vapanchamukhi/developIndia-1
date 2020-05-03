@@ -15,3 +15,20 @@
   top: 0;
   z-index: 1;
 }
+.hidden{
+  display: none;
+}
+.spacer{
+  flex: 1 1 auto
+}
+mat-toolbar a{
+  display: inline-block;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.active{
+  color: #00a651 !important;
+}
