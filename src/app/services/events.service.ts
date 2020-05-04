@@ -22,7 +22,7 @@ export class EventsService {
   }
   
   getEvents(){
-    return this.http.get<GetResponse>(this.url).pipe(
+    return this.http.get<GetResponse>(this.url+'?sort=title').pipe(
       map(response => response._embedded.eventses)
     );
   }

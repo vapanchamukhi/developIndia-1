@@ -29,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatConfirmDialogComponent } from './admin/mat-confirm-dialog/mat-confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MatListModule } from '@angular/material/list';
     AdminContactusComponent,
     AuthComponent,
     BlogDeatilsComponent,
-    MainNavComponent
+    MainNavComponent,
+    MatConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +67,7 @@ import { MatListModule } from '@angular/material/list';
     MatListModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [MatConfirmDialogComponent]
 })
 export class AppModule { }
