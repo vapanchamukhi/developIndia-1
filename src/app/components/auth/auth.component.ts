@@ -24,6 +24,7 @@ export class AuthComponent implements OnInit {
   }
 
   login(form: NgForm){
+    this.failedLogin = false
     console.log(this.failedLogin);
     let formData = form.value;
     for(let auth of this.authList){

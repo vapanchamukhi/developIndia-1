@@ -47,13 +47,14 @@
           class="nav-link">Blogs</a>
         <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="contactus"
           class="nav-link">Contact</a>
+        <a *ngIf="!authService.loggedIn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          routerLink="auth" class="nav-link" (click)="createProfile()">
+          <mat-icon>account_circle</mat-icon>
+        </a>
         <a *ngIf="authService.loggedIn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           routerLink="admin" class="nav-link">Admin Panel</a>
         <a *ngIf="authService.loggedIn" (click)="logout()" routerLink="contactus" class="nav-link">Log Out</a>
-        <a *ngIf="!authService.loggedIn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-          routerLink="auth" class="nav-link ml-3" (click)="createProfile()">
-          <mat-icon>account_circle</mat-icon>
-        </a>
+
       </div>
     </mat-toolbar>
     <!-- Add Content Here -->
