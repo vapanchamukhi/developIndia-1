@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from 'src/app/services/events.service';
 import { BlogService } from 'src/app/services/blog.service';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +14,15 @@ export class HomeComponent implements OnInit {
 
   eventsList=[];
   blogsList=[];
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
   constructor(private eventsService: EventsService,
-    private blogsService:BlogService) { }
+    private blogsService:BlogService,
+    private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
     this.eventsService.getEventsByDate().subscribe(data=>{

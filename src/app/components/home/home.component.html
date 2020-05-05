@@ -17,7 +17,7 @@
       <h2 class="text-white mb-3">Developed India is a state of mind. When we change our way of life to humanity that is the day we can say we live in a Developed country. So no infrastructure can change the status of a country. It is just our way of thinking and way of living in harmony with nature which decides whether we are developed or under developed or developing.</h2>
   </div> -->
   <div class="box-92819">
-    <h1 class="text-white mb-3 mt-2">Developed India !!</h1>
+    <h1 class="text-white mb-3 mt-2" *ngIf="!(isHandset$ | async)">Developed India !!</h1>
     <p class="lead text-white"><b>Developed India is a state of mind. When we change our way of life to humanity that is
         the day we can say we live in a Developed country. So no infrastructure can change the status of a country. It
         is
