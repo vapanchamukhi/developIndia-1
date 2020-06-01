@@ -4,6 +4,7 @@ import { BlogService } from 'src/app/services/blog.service';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -54,6 +55,5 @@ export class HomeComponent implements OnInit {
       }
       this.blogsList = tempBlogs;
     });
-  }
-  
+  }  
 }

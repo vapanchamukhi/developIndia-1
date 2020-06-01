@@ -1,44 +1,59 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { map } from 'rxjs/operators';
+import { AuthService } from './auth.serice';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
 
-  private url = 'https://develop-india-backend.herokuapp.com/api/blogs';
+  private url = 'http://develop-india-backend.herokuapp.com/api/blogs';
+  
+  headers;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private authService: AuthService) { 
+    let JWTToken = localStorage.getItem("token");
+    console.log("Get Blog key", JWTToken)
+    let tokenstr = 'Bearer '+ JWTToken;
+    this.headers = new HttpHeaders().set("Authorization", tokenstr);
+  }
 
   onPostBlog(form){
     console.log("form Blog Data ",form);
-    return this.http.post(this.url, form);
+    const headers = this.headers
+    return this.http.post(this.url, form, {headers, responseType: 'text' as 'json' });
   }
 
   getBlogs() {
-    return this.http.get<GetResponse>(this.url).pipe(
+    const headers = this.headers
+    console.log("HEaders", headers);
+    return this.http.get<GetResponse>(this.url, {headers}).pipe(
       map(response => response._embedded.blogs)
     );
   }
 
   getBlogsByDate() {
-    return this.http.get<GetResponse>(this.url+'?sort=lastUpdated,desc').pipe(
+    const headers = this.headers
+    return this.http.get<GetResponse>(this.url+'?sort=lastUpdated,desc', {headers}).pipe(
       map(response => response._embedded.blogs)
     );
   }
 
   getBlogsById(id){
-    return this.http.get(this.url+'/'+id);
+    const headers = this.headers
+    return this.http.get(this.url+'/'+id, { headers});
   }
 
   updateCount(id, count){
-    return this.http.patch(this.url + '/' + id,{count: count});
+    const headers = this.headers
+    return this.http.patch(this.url + '/' + id,{count: count},{headers});
   }
 
   deleteBlog(id){
-    return this.http.delete(this.url+'/'+id);
+    const headers = this.headers
+    return this.http.delete(this.url+'/'+id,{ headers});
   }
 }
 interface GetResponse {

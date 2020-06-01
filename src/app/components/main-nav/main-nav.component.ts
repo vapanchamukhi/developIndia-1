@@ -16,43 +16,50 @@ export class MainNavComponent {
       map(result => result.matches),
       shareReplay()
     );
+    currentUser:string;
 
   constructor(private breakpointObserver: BreakpointObserver,
     public authService: AuthService) {}
 
     ngOnInit(){
-      if (localStorage.getItem("develop-login")) {
-        this.authService.loggedIn = true;
+      if(localStorage.getItem("token")){
+        if(this.authService.isTokenExpired()){
+          this.currentUser = this.authService.getCurrentUser();
+          this.authService.loggedIn = true;
+        }
+        else{
+          localStorage.removeItem("token");
+        }
       }
     }
 
     logout() {
       this.authService.loggedIn = false;
-      localStorage.removeItem("develop-login");
+      localStorage.removeItem("token");
     }
 
-    createProfile() {
-      let form = {
-        email: 'vidya@developedindia.com',
-        password: 'vidyadevelopedindia'
-      }
-      let auths;
-      this.authService.getAuths().subscribe(data => {
-        auths = data
-        let authExists = false;
-        console.log('Recieved auths in header')
-        for (let auth of auths) {
-          if (auth.email === form.email && auth.password === form.password) {
-            authExists = true;
-            break;
-          }
-        }
-        if (!authExists) {
-          this.authService.onPostAuth(form);
-        }
-      },
-        error => console.log("error getting auths", error));
+    // createProfile() {
+    //   let form = {
+    //     email: 'vidya@developedindia.com',
+    //     password: 'vidyadevelopedindia'
+    //   }
+    //   let auths;
+    //   this.authService.getAuths().subscribe(data => {
+    //     auths = data
+    //     let authExists = false;
+    //     console.log('Recieved auths in header')
+    //     for (let auth of auths) {
+    //       if (auth.email === form.email && auth.password === form.password) {
+    //         authExists = true;
+    //         break;
+    //       }
+    //     }
+    //     if (!authExists) {
+    //       this.authService.onPostAuth(form);
+    //     }
+    //   },
+    //     error => console.log("error getting auths", error));
   
-    }
+    // }
 
 }

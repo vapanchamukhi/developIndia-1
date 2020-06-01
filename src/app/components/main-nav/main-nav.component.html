@@ -17,7 +17,7 @@
         routerLink="admin" class="nav-link">Admin Panel</a>
       <a *ngIf="authService.loggedIn" (click)="logout()" routerLink="contactus" class="nav-link">Log Out</a>
       <a *ngIf="!authService.loggedIn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-        routerLink="auth" class="nav-link ml-3" (click)="createProfile()">
+        routerLink="auth" class="nav-link ml-3">
         <mat-icon>account_circle</mat-icon>
       </a>
     </mat-nav-list>
@@ -48,12 +48,20 @@
         <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="contactus"
           class="nav-link">Contact</a>
         <a *ngIf="!authService.loggedIn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-          routerLink="auth" class="nav-link" (click)="createProfile()">
+          routerLink="auth" class="nav-link">
           <mat-icon>account_circle</mat-icon>
         </a>
         <a *ngIf="authService.loggedIn" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           routerLink="admin" class="nav-link">Admin Panel</a>
-        <a *ngIf="authService.loggedIn" (click)="logout()" routerLink="contactus" class="nav-link">Log Out</a>
+        <a *ngIf="authService.loggedIn" class="nav-link hyperlink" style="color: white;" [matMenuTriggerFor]="menu">
+          {{currentUser}}
+        </a>
+        <mat-menu #menu="matMenu">
+          <a *ngIf="authService.loggedIn" (click)="logout()"
+           routerLink="contactus" class="nav-link">
+           Log Out
+          </a>
+        </mat-menu>
 
       </div>
     </mat-toolbar>
