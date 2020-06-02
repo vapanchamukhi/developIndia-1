@@ -29,6 +29,7 @@ export class MainNavComponent {
         }
         else{
           localStorage.removeItem("token");
+          this.authService.loggedIn = false;
         }
       }
     }
