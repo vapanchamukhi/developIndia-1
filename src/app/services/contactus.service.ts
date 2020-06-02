@@ -21,7 +21,7 @@ export class ContactusService {
 
   onPostContactus(form) {
     console.log("form Data ", form)
-    let response = this.http.post(this.url, form,{headers: this.headers}) 
+    let response = this.http.post(this.url, form) 
     return response;
   }
   getContactus() {
