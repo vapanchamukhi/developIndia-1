@@ -29,13 +29,13 @@ export class EventsService {
   }
   
   getEvents(){
-    return this.http.get<GetResponse>(this.url+'?sort=title',{headers: this.headers}).pipe(
+    return this.http.get<GetResponse>(this.url+'?sort=title').pipe(
       map(response => response._embedded.eventses)
     );
   }
 
   getEventsByDate(){
-    return this.http.get<GetResponse>(this.url+'?sort=lastUpdated,desc',{headers: this.headers}).pipe(
+    return this.http.get<GetResponse>(this.url+'?sort=lastUpdated,desc').pipe(
       map(response => response._embedded.eventses)
     );
   }

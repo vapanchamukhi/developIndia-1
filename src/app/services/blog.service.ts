@@ -22,38 +22,31 @@ export class BlogService {
 
   onPostBlog(form){
     console.log("form Blog Data ",form);
-    const headers = this.headers
-    return this.http.post(this.url, form, {headers, responseType: 'text' as 'json' });
+    return this.http.post(this.url, form, {headers: this.headers});
   }
 
   getBlogs() {
-    const headers = this.headers
-    console.log("HEaders", headers);
-    return this.http.get<GetResponse>(this.url, {headers}).pipe(
+    return this.http.get<GetResponse>(this.url).pipe(
       map(response => response._embedded.blogs)
     );
   }
 
   getBlogsByDate() {
-    const headers = this.headers
-    return this.http.get<GetResponse>(this.url+'?sort=lastUpdated,desc', {headers}).pipe(
+    return this.http.get<GetResponse>(this.url+'?sort=lastUpdated,desc').pipe(
       map(response => response._embedded.blogs)
     );
   }
 
   getBlogsById(id){
-    const headers = this.headers
-    return this.http.get(this.url+'/'+id, { headers});
+    return this.http.get(this.url+'/'+id);
   }
 
   updateCount(id, count){
-    const headers = this.headers
-    return this.http.patch(this.url + '/' + id,{count: count},{headers});
+    return this.http.patch(this.url + '/' + id,{count: count},{headers: this.headers});
   }
 
   deleteBlog(id){
-    const headers = this.headers
-    return this.http.delete(this.url+'/'+id,{ headers});
+    return this.http.delete(this.url+'/'+id,{headers: this.headers});
   }
 }
 interface GetResponse {
