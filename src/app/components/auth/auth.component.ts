@@ -9,37 +9,32 @@ import { NgForm } from '@angular/forms';
 })
 export class AuthComponent implements OnInit {
 
-  authList;
+  JWTToken;
 
   failedLogin: boolean = false;
 
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
-    this.authService.getAuths().subscribe(data=>{
-      console.log("Received AuthLists", data)
-      this.authList = data;
-    },
-    error=>console.log("Error recveing auths", error))
   }
 
   login(form: NgForm){
+    this.failedLogin = false
     console.log(this.failedLogin);
     let formData = form.value;
-    for(let auth of this.authList){
-      if(formData.email === auth.email && formData.password === auth.password){
-        localStorage.setItem("develop-login", "true");
-        this.authService.loggedIn = true;
-        return
-      }
-    }
-    if(!this.authService.loggedIn)
+    this.JWTToken = this.authService.generateToken(formData);
+    let d = new Date();
+    console.log('time ', d);
+    localStorage.setItem("token", this.JWTToken);
+    this.authService.loggedIn = true
+    if(!this.authService.loggedIn){
+      console.log('logged in ', this.authService.loggedIn)
       this.failedLogin = true
+    }
   }
 
   logout(){
-    localStorage.removeItem("develop-login")
+    localStorage.removeItem("token")
     this.authService.loggedIn = false;
   }
-
 }

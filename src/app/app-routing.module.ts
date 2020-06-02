@@ -13,6 +13,7 @@ import { AdminEventsComponent } from './components/admin/admin-events/admin-even
 import { AdminContactusComponent } from './components/admin/admin-contactus/admin-contactus.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { BlogDeatilsComponent } from './components/blog/blog-deatils/blog-deatils.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 const routes: Routes = [
@@ -23,7 +24,7 @@ const routes: Routes = [
   {path: 'contactus', component: ContactComponent},
   {path: 'aboutus', component: AboutusComponent},
   {path: 'auth', component: AuthComponent},
-  {path: 'admin', component: AdminComponent, children:[
+  {path: 'admin', component: AdminComponent, canActivate: [AuthGuardService], children:[
     {path: 'admin-blogs', component: AdminBlogsComponent},
     {path: 'admin-blogs/add-new-blog', component: AddNewComponent},
     {path: 'admin-events', component: AdminEventsComponent},

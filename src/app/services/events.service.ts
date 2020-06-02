@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 
 import { map } from 'rxjs/operators';
@@ -13,18 +13,36 @@ export class EventsService {
 
   private url = 'https://develop-india-backend.herokuapp.com/api/eventses';
 
-  constructor(private http:HttpClient) { }
+  headers;
+
+  constructor(private http:HttpClient) { 
+    let JWTToken = localStorage.getItem("token");
+    console.log("Get Blog key", JWTToken)
+    let tokenstr = 'Bearer '+ JWTToken;
+    this.headers = new HttpHeaders().set("Authorization", tokenstr);
+  }
 
   onPostNewEvent(form:NgForm){
     console.log(form.value)
-    let response = this.http.post(this.url, form.value)
+    let response = this.http.post(this.url, form.value,{headers: this.headers})
     return response;
   }
-
+  
   getEvents(){
-    return this.http.get<GetResponse>(this.url).pipe(
+    return this.http.get<GetResponse>(this.url+'?sort=title',{headers: this.headers}).pipe(
       map(response => response._embedded.eventses)
     );
+  }
+
+  getEventsByDate(){
+    return this.http.get<GetResponse>(this.url+'?sort=lastUpdated,desc',{headers: this.headers}).pipe(
+      map(response => response._embedded.eventses)
+    );
+  }
+
+
+  deleteEvent(id){
+    return this.http.delete(this.url+'/'+id,{headers: this.headers});
   }
 }
 interface GetResponse {

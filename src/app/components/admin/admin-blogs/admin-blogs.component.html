@@ -1,7 +1,9 @@
 <div class="container my-5">
   <a routerLink="add-new-blog" class="btn btn-danger">Add new Blog</a>
 </div>
-
+<div class="alert alert-success" role="alert" *ngIf="deleted">
+  Successfully Deleted!
+</div>
 <table mat-table [dataSource]="blogsList" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -14,6 +16,13 @@
     </ng-container> -->
   
     <!-- Name Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <a class="hyperlink"><mat-icon (click)="delete(element.id)">delete</mat-icon></a>
+      </td>
+    </ng-container>
+
     <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef> Title </th>
       <td mat-cell *matCellDef="let element"> {{element.title}} </td>
@@ -29,7 +38,7 @@
     <ng-container matColumnDef="blog">
       <th mat-header-cell *matHeaderCellDef> Blog </th>
       <td mat-cell *matCellDef="let element">
-        <span>... <a routerLink="1">Read More</a></span>
+        <span>... <a routerLink="/blog/{{element.id}}">Read More</a></span>
       </td>
     </ng-container>
 

@@ -13,8 +13,8 @@
                         <h2 class="footer-heading mb-4">Features</h2>
                         <ul class="list-unstyled">
                             <li><a routerLink="aboutus">About Us</a></li>
-                            <li><a routerLink="events">Events</a></li>
-                            <li><a routerLink="blogs">Blogs</a></li>
+                            <li><a routerLink="events">Our Events</a></li>
+                            <li><a routerLink="blog">Blogs</a></li>
                             <li><a routerLink="contactus">Contact Us</a></li>
                         </ul>
                     </div>
@@ -28,6 +28,8 @@
                     <h2 class="footer-heading mb-4">Follow Us</h2>
                     <a href="https://www.facebook.com/DevelopedIndia/" target="_blank"
                         class="smoothscroll pl-0 pr-3"><span class="icon-facebook"></span></a>
+                    <a href="https://www.youtube.com/channel/UCJrfei2qQr5JZLhEmFxnPtw" target="_blank"
+                        class="smoothscroll pl-0 pr-3"><span class="icon-youtube"></span></a>
                     <!-- <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
                         <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                         <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a> -->
@@ -36,12 +38,18 @@
         </div>
         <div class="row pt-2">
             <div class="col-12 text-md-center text-left">
-              <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved Developed India || Made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://fb.com/anchal66" target="_blank" >Avinash Anchal</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              </p>
+                <div class="d-flex">
+                    <div class="mr-auto p-2">
+                        Copyright &copy; {{currYear}} All rights reserved
+                    </div>
+                    <div class="p-2">
+                        Developed by <a href="https://fb.com/anchal66" target="_blank">Avinash Anchal</a>
+                    </div>
+                </div>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                <!-- Copyright &copy; {{currYear}}  All rights reserved Developed India || Developed by <a href="https://fb.com/anchal66" target="_blank" >Avinash Anchal</a> -->
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </div>
-          </div>
+        </div>
     </div>
 </footer>
